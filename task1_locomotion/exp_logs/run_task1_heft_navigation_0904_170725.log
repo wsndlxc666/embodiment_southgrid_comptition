@@ -1,0 +1,311 @@
+[heft-task1] 根据 --robot-id=g1_pick 覆盖机器人配置: {'base_body': 'g1_pick_pelvis', 'free_joint': 'g1_pick_floating_base_joint', 'ee_site': 'g1_pick_left_palm', 'ee_site_right': 'g1_pick_right_palm', 'finger_a': 'g1_pick_left_hand_thumb_0_joint', 'finger_b': 'g1_pick_left_hand_index_0_joint'}
+[2026-09-04 17:07:26.862] [33mWARNING    [0m | __init__             | /home/dgl/miniconda3/envs/orcalab/lib/python3.12/site-packages/orca_gym/environment/orca_gym_local_env.py:87   | Using legacy anchor body name 'ActorManipulator_Anchor'. Please upgrade the level to use the new UUID-based name 'ORCA_MANIPULATOR_a3f5e2d1-7b8c-4f2a-9e6d-1c2b3a4f5d6e_Anchor' to avoid name conflicts with user-imported XML.
+[orca_rl.scene] G1: complete matches ['g1_pick']
+[2026-09-04 17:07:27.066] [33mWARNING    [0m | __init__             | /home/dgl/miniconda3/envs/orcalab/lib/python3.12/site-packages/orca_gym/environment/orca_gym_local_env.py:87   | Using legacy anchor body name 'ActorManipulator_Anchor'. Please upgrade the level to use the new UUID-based name 'ORCA_MANIPULATOR_a3f5e2d1-7b8c-4f2a-9e6d-1c2b3a4f5d6e_Anchor' to avoid name conflicts with user-imported XML.
+[orca_rl.play] Applied unitree-orca MuJoCo global settings: integrator=Euler gravity=(0, 0, -9.81) density=0 viscosity=0 wind=(0, 0, 0) noslip_iterations=0 sdf_iterations=10
+[orca_rl.control] G1: action_dim=29, model_nu=85, preserved_uncontrolled_actuators=56
+[ScorerClient] 正在自动启动本地评分服务（源码模式）: /home/dgl/miniconda3/envs/orcalab/bin/python -m scorer_service.main --host 127.0.0.1 --port 9000 --orca-addr localhost:50051 --team-id team_003 --team-token token_team_003 --server-url http://8.159.130.194 --robot-id g1_pick --parent-pid 3829082 --sample-interval 0.1 --video-fps 10 --keep-window-on-top
+[ScorerClient] 服务日志: /home/dgl/lxc/task1_locomotion/.orca_scorer_client/scorer_service_9000.log
+[ScorerClient] 等待本地评分服务就绪...
+[ScorerClient] 本地评分服务已就绪
+[heft-task1] robot=G1+Dex3-1 envs=1 remote=localhost:50051
+[scorer] attempt started: att_313bab6fe335
+
+[nav] 目标: Static_Location_A_site @ (43.55, -27.57)
+  [  0] pos=(19.56,-26.68) yaw= -2.9° dist=24.01m err= 0.7°
+  [ 25] pos=(19.77,-26.70) yaw= -2.6° dist=23.80m err= 0.5°
+  [ 50] pos=(19.97,-26.71) yaw= -1.0° dist=23.59m err=-1.1°
+  [ 75] pos=(20.18,-26.71) yaw= -1.8° dist=23.39m err=-0.3°
+  [100] pos=(20.38,-26.72) yaw= -1.4° dist=23.19m err=-0.7°
+  [125] pos=(20.58,-26.73) yaw= -1.4° dist=22.98m err=-0.7°
+  [150] pos=(20.79,-26.74) yaw= -1.9° dist=22.78m err=-0.2°
+  [175] pos=(20.99,-26.74) yaw= -2.7° dist=22.58m err= 0.6°
+  [200] pos=(21.19,-26.75) yaw= -2.9° dist=22.37m err= 0.8°
+  [225] pos=(21.40,-26.76) yaw= -2.3° dist=22.17m err= 0.2°
+  [250] pos=(21.60,-26.77) yaw= -1.6° dist=21.97m err=-0.5°
+  [275] pos=(21.80,-26.77) yaw= -1.5° dist=21.76m err=-0.6°
+  [300] pos=(22.01,-26.78) yaw= -2.0° dist=21.56m err=-0.1°
+  [325] pos=(22.20,-26.79) yaw= -2.5° dist=21.36m err= 0.4°
+  [350] pos=(22.41,-26.80) yaw= -2.3° dist=21.16m err= 0.2°
+  [375] pos=(22.61,-26.81) yaw= -1.4° dist=20.96m err=-0.7°
+  [400] pos=(22.81,-26.81) yaw= -1.4° dist=20.75m err=-0.7°
+  [425] pos=(23.02,-26.82) yaw= -1.6° dist=20.55m err=-0.5°
+  [450] pos=(23.22,-26.83) yaw= -2.5° dist=20.35m err= 0.4°
+  [475] pos=(23.42,-26.84) yaw= -2.6° dist=20.14m err= 0.6°
+  [500] pos=(23.63,-26.84) yaw= -2.4° dist=19.94m err= 0.3°
+  [525] pos=(23.83,-26.85) yaw= -1.4° dist=19.74m err=-0.7°
+  [550] pos=(24.03,-26.86) yaw= -1.5° dist=19.53m err=-0.6°
+  [575] pos=(24.24,-26.87) yaw= -1.7° dist=19.33m err=-0.4°
+  [600] pos=(24.44,-26.87) yaw= -2.3° dist=19.13m err= 0.2°
+  [625] pos=(24.64,-26.88) yaw= -2.1° dist=18.93m err= 0.0°
+  [650] pos=(24.84,-26.89) yaw= -1.5° dist=18.72m err=-0.6°
+  [675] pos=(25.04,-26.90) yaw= -1.3° dist=18.52m err=-0.8°
+  [700] pos=(25.25,-26.91) yaw= -1.3° dist=18.32m err=-0.8°
+  [725] pos=(25.45,-26.91) yaw= -1.9° dist=18.11m err=-0.2°
+  [750] pos=(25.65,-26.92) yaw= -2.6° dist=17.91m err= 0.5°
+  [775] pos=(25.86,-26.93) yaw= -2.6° dist=17.71m err= 0.5°
+  [800] pos=(26.06,-26.94) yaw= -1.8° dist=17.50m err=-0.2°
+  [825] pos=(26.26,-26.94) yaw= -1.4° dist=17.30m err=-0.7°
+  [850] pos=(26.47,-26.95) yaw= -1.4° dist=17.10m err=-0.7°
+  [875] pos=(26.67,-26.96) yaw= -2.0° dist=16.89m err=-0.1°
+  [900] pos=(26.87,-26.97) yaw= -2.5° dist=16.69m err= 0.4°
+  [925] pos=(27.07,-26.98) yaw= -1.9° dist=16.49m err=-0.2°
+  [950] pos=(27.27,-26.98) yaw= -1.2° dist=16.29m err=-0.8°
+  [975] pos=(27.48,-26.99) yaw= -1.4° dist=16.09m err=-0.7°
+  [1000] pos=(27.68,-27.00) yaw= -1.2° dist=15.88m err=-0.8°
+  [1025] pos=(27.88,-27.00) yaw= -2.5° dist=15.68m err= 0.4°
+  [1050] pos=(28.09,-27.01) yaw= -2.7° dist=15.48m err= 0.6°
+  [1075] pos=(28.29,-27.02) yaw= -2.6° dist=15.27m err= 0.5°
+  [1100] pos=(28.49,-27.03) yaw= -1.3° dist=15.07m err=-0.7°
+  [1125] pos=(28.70,-27.03) yaw= -1.4° dist=14.87m err=-0.6°
+  [1150] pos=(28.90,-27.04) yaw= -1.3° dist=14.66m err=-0.8°
+  [1175] pos=(29.10,-27.05) yaw= -2.6° dist=14.46m err= 0.5°
+  [1200] pos=(29.31,-27.06) yaw= -2.7° dist=14.26m err= 0.7°
+  [1225] pos=(29.51,-27.07) yaw= -1.8° dist=14.06m err=-0.3°
+  [1250] pos=(29.71,-27.08) yaw= -1.3° dist=13.86m err=-0.8°
+  [1275] pos=(29.91,-27.08) yaw= -1.2° dist=13.65m err=-0.9°
+  [1300] pos=(30.11,-27.09) yaw= -2.1° dist=13.45m err= 0.1°
+  [1325] pos=(30.32,-27.10) yaw= -2.5° dist=13.24m err= 0.4°
+  [1350] pos=(30.52,-27.10) yaw= -2.6° dist=13.04m err= 0.5°
+  [1375] pos=(30.72,-27.11) yaw= -1.5° dist=12.84m err=-0.5°
+  [1400] pos=(30.93,-27.12) yaw= -1.4° dist=12.63m err=-0.7°
+  [1425] pos=(31.13,-27.13) yaw= -1.3° dist=12.43m err=-0.7°
+  [1450] pos=(31.33,-27.13) yaw= -2.3° dist=12.23m err= 0.2°
+  [1475] pos=(31.54,-27.14) yaw= -2.6° dist=12.02m err= 0.5°
+  [1500] pos=(31.74,-27.15) yaw= -2.6° dist=11.82m err= 0.6°
+  [1525] pos=(31.94,-27.16) yaw= -1.6° dist=11.62m err=-0.4°
+  [1550] pos=(32.14,-27.17) yaw= -1.3° dist=11.42m err=-0.8°
+  [1575] pos=(32.34,-27.17) yaw= -1.5° dist=11.22m err=-0.6°
+  [1600] pos=(32.55,-27.18) yaw= -2.4° dist=11.01m err= 0.4°
+  [1625] pos=(32.75,-27.19) yaw= -2.7° dist=10.81m err= 0.6°
+  [1650] pos=(32.95,-27.19) yaw= -2.1° dist=10.61m err= 0.0°
+  [1675] pos=(33.16,-27.20) yaw= -1.3° dist=10.40m err=-0.7°
+  [1700] pos=(33.36,-27.21) yaw= -1.3° dist=10.20m err=-0.8°
+  [1725] pos=(33.56,-27.22) yaw= -1.7° dist=10.00m err=-0.3°
+  [1750] pos=(33.77,-27.22) yaw= -2.5° dist=9.79m err= 0.5°
+  [1775] pos=(33.97,-27.23) yaw= -2.8° dist=9.59m err= 0.7°
+  [1800] pos=(34.17,-27.24) yaw= -2.2° dist=9.39m err= 0.1°
+  [1825] pos=(34.37,-27.25) yaw= -1.6° dist=9.19m err=-0.4°
+  [1850] pos=(34.57,-27.26) yaw= -1.2° dist=8.99m err=-0.8°
+  [1875] pos=(34.78,-27.26) yaw= -2.1° dist=8.78m err= 0.1°
+  [1900] pos=(34.98,-27.27) yaw= -2.5° dist=8.58m err= 0.5°
+  [1925] pos=(35.18,-27.27) yaw= -2.3° dist=8.38m err= 0.2°
+  [1950] pos=(35.39,-27.28) yaw= -1.3° dist=8.17m err=-0.7°
+  [1975] pos=(35.59,-27.29) yaw= -1.3° dist=7.97m err=-0.7°
+  [2000] pos=(35.79,-27.30) yaw= -1.5° dist=7.77m err=-0.5°
+  [2025] pos=(36.00,-27.31) yaw= -2.4° dist=7.56m err= 0.4°
+  [2050] pos=(36.20,-27.31) yaw= -2.6° dist=7.36m err= 0.6°
+  [2075] pos=(36.40,-27.32) yaw= -2.3° dist=7.16m err= 0.3°
+  [2100] pos=(36.61,-27.33) yaw= -1.4° dist=6.95m err=-0.7°
+  [2125] pos=(36.81,-27.34) yaw= -1.9° dist=6.75m err=-0.1°
+  [2150] pos=(37.01,-27.35) yaw= -1.7° dist=6.55m err=-0.2°
+  [2175] pos=(37.21,-27.35) yaw= -2.2° dist=6.35m err= 0.2°
+  [2200] pos=(37.41,-27.36) yaw= -2.4° dist=6.14m err= 0.4°
+  [2225] pos=(37.62,-27.36) yaw= -1.7° dist=5.94m err=-0.3°
+  [2250] pos=(37.82,-27.37) yaw= -1.3° dist=5.74m err=-0.7°
+  [2275] pos=(38.02,-27.38) yaw= -1.3° dist=5.53m err=-0.7°
+  [2300] pos=(38.23,-27.39) yaw= -1.9° dist=5.33m err=-0.1°
+  [2325] pos=(38.43,-27.39) yaw= -2.5° dist=5.13m err= 0.5°
+  [2350] pos=(38.63,-27.40) yaw= -2.5° dist=4.92m err= 0.5°
+  [2375] pos=(38.84,-27.41) yaw= -1.8° dist=4.72m err=-0.2°
+  [2400] pos=(39.04,-27.42) yaw= -1.4° dist=4.52m err=-0.6°
+  [2425] pos=(39.24,-27.42) yaw= -1.5° dist=4.32m err=-0.5°
+  [2450] pos=(39.44,-27.43) yaw= -2.2° dist=4.12m err= 0.3°
+  [2475] pos=(39.64,-27.44) yaw= -2.3° dist=3.91m err= 0.3°
+  [2500] pos=(39.85,-27.44) yaw= -2.4° dist=3.71m err= 0.4°
+  [2525] pos=(40.05,-27.45) yaw= -1.2° dist=3.50m err=-0.8°
+  [2550] pos=(40.25,-27.46) yaw= -1.3° dist=3.30m err=-0.7°
+  [2575] pos=(40.46,-27.47) yaw= -1.2° dist=3.10m err=-0.8°
+  [2600] pos=(40.66,-27.47) yaw= -2.4° dist=2.89m err= 0.5°
+  [2625] pos=(40.86,-27.48) yaw= -2.6° dist=2.69m err= 0.6°
+  [2650] pos=(41.07,-27.48) yaw= -2.5° dist=2.49m err= 0.5°
+  [2675] pos=(41.27,-27.49) yaw= -1.3° dist=2.28m err=-0.7°
+  [2700] pos=(41.47,-27.50) yaw= -1.3° dist=2.08m err=-0.6°
+  [2725] pos=(41.67,-27.51) yaw= -1.6° dist=1.88m err=-0.3°
+  [2750] pos=(41.87,-27.52) yaw= -2.3° dist=1.68m err= 0.4°
+  [2775] pos=(42.08,-27.52) yaw= -2.2° dist=1.48m err= 0.3°
+  [2800] pos=(42.28,-27.53) yaw= -1.3° dist=1.27m err=-0.6°
+  [2825] pos=(42.48,-27.54) yaw= -1.2° dist=1.07m err=-0.7°
+  [2850] pos=(42.69,-27.54) yaw= -1.1° dist=0.87m err=-0.7°
+  [2875] pos=(42.89,-27.55) yaw= -2.0° dist=0.66m err= 0.2°
+[nav] 到达 Static_Location_A_site (dist=0.60m)
+
+[nav] 目标: Static_Location_B_site @ (30.75, -27.57)
+  [  0] pos=(42.95,-27.55) yaw= -1.2° dist=12.21m err=-178.7°
+  [ 25] pos=(42.98,-27.55) yaw= -5.7° dist=12.24m err=-174.2°
+  [ 50] pos=(42.95,-27.52) yaw=-25.0° dist=12.20m err=-154.7°
+  [ 75] pos=(42.92,-27.51) yaw=-43.7° dist=12.17m err=-136.0°
+  [100] pos=(42.90,-27.49) yaw=-64.7° dist=12.15m err=-114.9°
+  [125] pos=(42.88,-27.45) yaw=-83.8° dist=12.13m err=-95.6°
+  [150] pos=(42.89,-27.41) yaw=-103.2° dist=12.14m err=-76.1°
+  [175] pos=(42.91,-27.38) yaw=-124.7° dist=12.17m err=-54.5°
+  [200] pos=(42.94,-27.35) yaw=-144.8° dist=12.19m err=-34.2°
+  [225] pos=(42.97,-27.34) yaw=-164.4° dist=12.22m err=-14.5°
+  [250] pos=(42.88,-27.34) yaw=-175.8° dist=12.13m err=-3.1°
+  [275] pos=(42.67,-27.34) yaw=-176.7° dist=11.93m err=-2.2°
+  [300] pos=(42.47,-27.34) yaw=-177.3° dist=11.73m err=-1.5°
+  [325] pos=(42.27,-27.35) yaw=-177.9° dist=11.52m err=-1.0°
+  [350] pos=(42.07,-27.35) yaw=-178.6° dist=11.32m err=-0.3°
+  [375] pos=(41.86,-27.36) yaw=-178.8° dist=11.12m err=-0.1°
+  [400] pos=(41.66,-27.36) yaw=-178.0° dist=10.91m err=-0.9°
+  [425] pos=(41.46,-27.36) yaw=-177.5° dist=10.71m err=-1.4°
+  [450] pos=(41.25,-27.37) yaw=-177.5° dist=10.51m err=-1.3°
+  [475] pos=(41.05,-27.37) yaw=-178.1° dist=10.30m err=-0.8°
+  [500] pos=(40.85,-27.37) yaw=-178.7° dist=10.10m err=-0.2°
+  [525] pos=(40.64,-27.38) yaw=-178.8° dist=9.90m err=-0.0°
+  [550] pos=(40.44,-27.38) yaw=-178.0° dist=9.70m err=-0.9°
+  [575] pos=(40.24,-27.38) yaw=-177.9° dist=9.50m err=-1.0°
+  [600] pos=(40.04,-27.38) yaw=-177.9° dist=9.29m err=-0.9°
+  [625] pos=(39.84,-27.39) yaw=-179.1° dist=9.09m err= 0.3°
+  [650] pos=(39.63,-27.39) yaw=-179.4° dist=8.89m err= 0.5°
+  [675] pos=(39.43,-27.40) yaw=-179.3° dist=8.68m err= 0.4°
+  [700] pos=(39.23,-27.40) yaw=-178.0° dist=8.48m err=-0.8°
+  [725] pos=(39.02,-27.41) yaw=-178.1° dist=8.28m err=-0.7°
+  [750] pos=(38.82,-27.41) yaw=-178.0° dist=8.07m err=-0.8°
+  [775] pos=(38.62,-27.42) yaw=-179.2° dist=7.87m err= 0.4°
+  [800] pos=(38.41,-27.42) yaw=-179.5° dist=7.67m err= 0.6°
+  [825] pos=(38.21,-27.43) yaw=-179.3° dist=7.46m err= 0.5°
+  [850] pos=(38.01,-27.42) yaw=-178.4° dist=7.26m err=-0.4°
+  [875] pos=(37.81,-27.43) yaw=-178.0° dist=7.06m err=-0.8°
+  [900] pos=(37.61,-27.43) yaw=-178.7° dist=6.86m err=-0.1°
+  [925] pos=(37.40,-27.44) yaw=-179.2° dist=6.65m err= 0.4°
+  [950] pos=(37.20,-27.44) yaw=-179.3° dist=6.45m err= 0.5°
+  [975] pos=(36.99,-27.44) yaw=-178.3° dist=6.25m err=-0.6°
+  [1000] pos=(36.79,-27.45) yaw=-178.1° dist=6.04m err=-0.7°
+  [1025] pos=(36.59,-27.45) yaw=-178.1° dist=5.84m err=-0.8°
+  [1050] pos=(36.38,-27.46) yaw=-179.0° dist=5.64m err= 0.2°
+  [1075] pos=(36.18,-27.46) yaw=-179.3° dist=5.43m err= 0.5°
+  [1100] pos=(35.98,-27.47) yaw=-179.4° dist=5.23m err= 0.5°
+  [1125] pos=(35.77,-27.47) yaw=-178.4° dist=5.03m err=-0.5°
+  [1150] pos=(35.57,-27.47) yaw=-178.5° dist=4.83m err=-0.3°
+  [1175] pos=(35.38,-27.47) yaw=-178.1° dist=4.63m err=-0.7°
+  [1200] pos=(35.17,-27.48) yaw=-179.0° dist=4.42m err= 0.2°
+  [1225] pos=(34.97,-27.48) yaw=-179.4° dist=4.22m err= 0.6°
+  [1250] pos=(34.76,-27.49) yaw=-178.8° dist=4.02m err= 0.0°
+  [1275] pos=(34.56,-27.49) yaw=-178.1° dist=3.81m err=-0.7°
+  [1300] pos=(34.36,-27.50) yaw=-178.0° dist=3.61m err=-0.8°
+  [1325] pos=(34.15,-27.50) yaw=-178.4° dist=3.41m err=-0.3°
+  [1350] pos=(33.95,-27.50) yaw=-179.3° dist=3.20m err= 0.5°
+  [1375] pos=(33.75,-27.51) yaw=-179.5° dist=3.00m err= 0.7°
+  [1400] pos=(33.54,-27.51) yaw=-178.9° dist=2.80m err= 0.1°
+  [1425] pos=(33.34,-27.52) yaw=-178.1° dist=2.59m err=-0.6°
+  [1450] pos=(33.14,-27.52) yaw=-178.4° dist=2.39m err=-0.4°
+  [1475] pos=(32.94,-27.52) yaw=-178.9° dist=2.19m err= 0.2°
+  [1500] pos=(32.74,-27.53) yaw=-179.0° dist=1.99m err= 0.2°
+  [1525] pos=(32.53,-27.53) yaw=-179.0° dist=1.79m err= 0.2°
+  [1550] pos=(32.33,-27.54) yaw=-178.0° dist=1.58m err=-0.8°
+  [1575] pos=(32.13,-27.54) yaw=-178.0° dist=1.38m err=-0.7°
+  [1600] pos=(31.92,-27.54) yaw=-178.2° dist=1.18m err=-0.4°
+  [1625] pos=(31.72,-27.55) yaw=-179.1° dist=0.97m err= 0.4°
+  [1650] pos=(31.52,-27.55) yaw=-179.3° dist=0.77m err= 0.6°
+[nav] 到达 Static_Location_B_site (dist=0.60m)
+
+[nav] 目标: Static_Location_B_site_via1 @ (25.00, -28.00)
+  [  0] pos=(31.34,-27.56) yaw=-178.2° dist=6.36m err= 2.2°
+  [ 25] pos=(31.14,-27.57) yaw=-176.3° dist=6.16m err= 0.2°
+  [ 50] pos=(30.94,-27.59) yaw=-175.7° dist=5.95m err=-0.3°
+  [ 75] pos=(30.74,-27.60) yaw=-176.5° dist=5.75m err= 0.5°
+  [100] pos=(30.54,-27.61) yaw=-176.2° dist=5.55m err= 0.3°
+  [125] pos=(30.34,-27.63) yaw=-175.8° dist=5.35m err=-0.2°
+  [150] pos=(30.13,-27.64) yaw=-175.3° dist=5.15m err=-0.7°
+  [175] pos=(29.93,-27.65) yaw=-175.2° dist=4.94m err=-0.8°
+  [200] pos=(29.73,-27.67) yaw=-175.6° dist=4.74m err=-0.3°
+  [225] pos=(29.52,-27.68) yaw=-176.5° dist=4.54m err= 0.5°
+  [250] pos=(29.32,-27.70) yaw=-176.7° dist=4.33m err= 0.7°
+  [275] pos=(29.12,-27.71) yaw=-176.1° dist=4.13m err= 0.1°
+  [300] pos=(28.92,-27.73) yaw=-175.4° dist=3.93m err=-0.6°
+  [325] pos=(28.71,-27.74) yaw=-175.3° dist=3.72m err=-0.7°
+  [350] pos=(28.51,-27.75) yaw=-175.7° dist=3.52m err=-0.2°
+  [375] pos=(28.31,-27.77) yaw=-176.4° dist=3.32m err= 0.4°
+  [400] pos=(28.11,-27.78) yaw=-175.9° dist=3.12m err=-0.1°
+  [425] pos=(27.91,-27.79) yaw=-175.0° dist=2.91m err=-0.9°
+  [450] pos=(27.70,-27.81) yaw=-175.2° dist=2.71m err=-0.7°
+  [475] pos=(27.50,-27.82) yaw=-175.4° dist=2.51m err=-0.5°
+  [500] pos=(27.30,-27.84) yaw=-176.3° dist=2.30m err= 0.3°
+  [525] pos=(27.10,-27.85) yaw=-176.5° dist=2.10m err= 0.5°
+  [550] pos=(26.89,-27.87) yaw=-176.2° dist=1.90m err= 0.2°
+  [575] pos=(26.69,-27.88) yaw=-175.2° dist=1.69m err=-0.7°
+  [600] pos=(26.49,-27.89) yaw=-175.3° dist=1.49m err=-0.6°
+  [625] pos=(26.28,-27.91) yaw=-175.5° dist=1.29m err=-0.4°
+  [650] pos=(26.08,-27.92) yaw=-176.4° dist=1.08m err= 0.4°
+  [675] pos=(25.88,-27.94) yaw=-176.5° dist=0.88m err= 0.6°
+  [700] pos=(25.68,-27.95) yaw=-175.6° dist=0.68m err=-0.1°
+  [725] pos=(25.48,-27.96) yaw=-174.9° dist=0.48m err=-0.7°
+[nav] 到达 Static_Location_B_site_via1 (dist=0.29m)
+
+[nav] 目标: Static_Location_B_site_via2 @ (22.00, -28.00)
+  [  0] pos=(25.29,-27.98) yaw=-175.1° dist=3.29m err=-4.5°
+  [ 25] pos=(25.09,-27.98) yaw=-178.6° dist=3.09m err=-1.0°
+  [ 50] pos=(24.89,-27.98) yaw=-179.4° dist=2.89m err=-0.2°
+  [ 75] pos=(24.68,-27.98) yaw=-179.5° dist=2.68m err=-0.2°
+  [100] pos=(24.48,-27.98) yaw=-178.4° dist=2.48m err=-1.3°
+  [125] pos=(24.28,-27.98) yaw=-178.4° dist=2.28m err=-1.2°
+  [150] pos=(24.07,-27.98) yaw=-178.6° dist=2.07m err=-0.9°
+  [175] pos=(23.87,-27.99) yaw=-179.5° dist=1.87m err=-0.1°
+  [200] pos=(23.67,-27.99) yaw=-179.7° dist=1.67m err= 0.1°
+  [225] pos=(23.46,-27.99) yaw=-179.6° dist=1.46m err=-0.1°
+  [250] pos=(23.26,-27.99) yaw=-178.7° dist=1.26m err=-0.8°
+  [275] pos=(23.06,-27.99) yaw=-178.3° dist=1.06m err=-1.1°
+  [300] pos=(22.86,-27.99) yaw=-179.0° dist=0.86m err=-0.4°
+  [325] pos=(22.65,-27.99) yaw=-179.8° dist=0.65m err= 0.4°
+  [350] pos=(22.45,-28.00) yaw=-179.9° dist=0.45m err= 0.4°
+[nav] 到达 Static_Location_B_site_via2 (dist=0.30m)
+
+[nav] 目标: Static_Location_B_site_via3 @ (19.50, -27.00)
+  [  0] pos=(22.30,-28.00) yaw=-178.7° dist=2.97m err=-20.9°
+  [ 25] pos=(22.29,-28.00) yaw=175.7° dist=2.96m err=-15.5°
+  [ 50] pos=(22.22,-27.97) yaw=163.1° dist=2.89m err=-2.8°
+  [ 75] pos=(22.03,-27.90) yaw=162.3° dist=2.69m err=-1.9°
+  [100] pos=(21.84,-27.83) yaw=161.7° dist=2.48m err=-1.3°
+  [125] pos=(21.65,-27.77) yaw=160.7° dist=2.28m err=-0.3°
+  [150] pos=(21.46,-27.70) yaw=160.3° dist=2.08m err= 0.0°
+  [175] pos=(21.27,-27.63) yaw=160.9° dist=1.87m err=-0.6°
+  [200] pos=(21.07,-27.56) yaw=161.8° dist=1.67m err=-1.4°
+  [225] pos=(20.88,-27.49) yaw=161.8° dist=1.47m err=-1.4°
+  [250] pos=(20.69,-27.42) yaw=161.4° dist=1.27m err=-1.0°
+  [275] pos=(20.50,-27.36) yaw=160.5° dist=1.06m err=-0.1°
+  [300] pos=(20.31,-27.29) yaw=160.3° dist=0.86m err= 0.2°
+  [325] pos=(20.12,-27.22) yaw=160.9° dist=0.66m err=-0.6°
+  [350] pos=(19.93,-27.15) yaw=161.4° dist=0.46m err=-0.7°
+[nav] 到达 Static_Location_B_site_via3 (dist=0.30m)
+
+[nav] 目标: Static_Location_B_site_via4 @ (19.00, -25.00)
+  [  0] pos=(19.78,-27.10) yaw=160.8° dist=2.24m err=-50.4°
+  [ 25] pos=(19.78,-27.09) yaw=157.3° dist=2.23m err=-46.8°
+  [ 50] pos=(19.81,-27.12) yaw=140.8° dist=2.27m err=-29.8°
+  [ 75] pos=(19.85,-27.14) yaw=120.1° dist=2.30m err=-8.5°
+  [100] pos=(19.78,-27.00) yaw=113.3° dist=2.14m err=-1.9°
+  [125] pos=(19.71,-26.81) yaw=111.8° dist=1.94m err=-0.4°
+  [150] pos=(19.63,-26.62) yaw=112.8° dist=1.74m err=-1.4°
+  [175] pos=(19.56,-26.43) yaw=112.7° dist=1.54m err=-1.2°
+  [200] pos=(19.49,-26.24) yaw=112.7° dist=1.33m err=-1.2°
+  [225] pos=(19.41,-26.05) yaw=111.6° dist=1.13m err=-0.2°
+  [250] pos=(19.34,-25.86) yaw=111.3° dist=0.93m err= 0.2°
+  [275] pos=(19.26,-25.67) yaw=111.4° dist=0.72m err=-0.1°
+  [300] pos=(19.19,-25.48) yaw=112.8° dist=0.52m err=-1.3°
+  [325] pos=(19.12,-25.29) yaw=112.7° dist=0.32m err=-1.2°
+[nav] 到达 Static_Location_B_site_via4 (dist=0.30m)
+
+[nav] 目标: Static_Location_C_site @ (19.13, -22.90)
+  [  0] pos=(19.11,-25.28) yaw=112.7° dist=2.38m err=-23.2°
+  [ 25] pos=(19.10,-25.27) yaw=107.1° dist=2.37m err=-17.8°
+  [ 50] pos=(19.10,-25.22) yaw= 92.9° dist=2.32m err=-3.6°
+  [ 75] pos=(19.11,-25.03) yaw= 91.4° dist=2.12m err=-2.0°
+  [100] pos=(19.11,-24.82) yaw= 90.1° dist=1.92m err=-0.8°
+  [125] pos=(19.11,-24.62) yaw= 89.6° dist=1.72m err=-0.2°
+  [150] pos=(19.11,-24.42) yaw= 89.6° dist=1.51m err=-0.3°
+  [175] pos=(19.12,-24.21) yaw= 90.8° dist=1.31m err=-1.5°
+  [200] pos=(19.12,-24.01) yaw= 90.7° dist=1.11m err=-1.4°
+  [225] pos=(19.12,-23.81) yaw= 90.5° dist=0.90m err=-1.0°
+  [250] pos=(19.12,-23.60) yaw= 89.7° dist=0.70m err=-0.3°
+[nav] 到达 Static_Location_C_site (dist=0.59m)
+
+[heft-task1] 导航完成: {'reached': ['Static_Location_A_site', 'Static_Location_B_site', 'Static_Location_B_site_via1', 'Static_Location_B_site_via2', 'Static_Location_B_site_via3', 'Static_Location_B_site_via4', 'Static_Location_C_site'], 'total_steps': 6631, 'elapsed_s': 132.62}
+[scorer] score: 14.9434 / 14.9434
+  start_move: PASS
+  pass_checkpoint_a: PASS
+  pass_checkpoint_b: PASS
+  arrive_panel: PASS
+  smooth_motion: FAIL
+[scorer] 等待 20s 让视频上传完成...
+[ScorerClient] 已通知本地评分服务优雅退出

@@ -1,0 +1,268 @@
+{
+  "attempt_id": "att_218a0fe4e584",
+  "task_id": "task3_tool_storage",
+  "team_id": "team_003",
+  "total_steps": 6,
+  "success_steps": 2,
+  "score": 1.1573,
+  "max_score": 1.1573,
+  "success_rate": 0.3333333333333333,
+  "started_at": "2026-09-04T04:27:17.987090+00:00",
+  "ended_at": "2026-09-04T04:27:17.987108+00:00",
+  "status": "completed",
+  "step_results": [
+    {
+      "step_id": "reach_tool_table",
+      "name": "到达作业位姿",
+      "score": 0.4797,
+      "weight": 5.0,
+      "success": true,
+      "duration_s": 27.528,
+      "diagnosis": {
+        "passed": true,
+        "reason": "得分比率 0.9603（原始值 0.7194417479998655）",
+        "actual": 0.7194417479998655,
+        "expected": "按 score_curve 映射",
+        "task3_penalty": "未检测到机器人有效动作（base/max_v=0.000m/s, path=0.000m; left_ee/max_v=0.000m/s, path=0.000m; right_ee/max_v=0.000m/s, path=0.000m），得分打 1 折"
+      },
+      "frame_samples": 1342,
+      "auto_scored": true,
+      "extra": {
+        "score": 0.4797,
+        "task3_discount": 0.1,
+        "task3_reason": "未检测到机器人有效动作（base/max_v=0.000m/s, path=0.000m; left_ee/max_v=0.000m/s, path=0.000m; right_ee/max_v=0.000m/s, path=0.000m），得分打 1 折",
+        "task3_duration_s": 165.165,
+        "task3_movement_check": {
+          "base_max_velocity": 0.0,
+          "base_path_length": 0.0,
+          "left_ee_max_velocity": 0.0,
+          "left_ee_path_length": 0.0,
+          "right_ee_max_velocity": 0.0,
+          "right_ee_path_length": 0.0,
+          "speedrun": false,
+          "no_movement_cheat": true
+        }
+      }
+    },
+    {
+      "step_id": "pick_voltage_pen",
+      "name": "拾取电工刀02归位",
+      "score": 0.0,
+      "weight": 7.0,
+      "success": false,
+      "duration_s": 27.528,
+      "diagnosis": {
+        "passed": false,
+        "reason": "条件[0]未满足: 得分比率 0.0000（原始值 0.7981862896088902）",
+        "actual": 0.7981862896088902,
+        "expected": "按 score_curve 映射",
+        "sub_conditions": [
+          {
+            "passed": false,
+            "reason": "得分比率 0.0000（原始值 0.7981862896088902）",
+            "actual": 0.7981862896088902,
+            "expected": "按 score_curve 映射",
+            "index": 0,
+            "repr": "score_curve(site_distance('Group_Interactive_ElectriciansKnife02_task_electriciansknife02_site', 'Group_Interactive_ToolBox_base_site'), points=[[0.0, 1.0], [0.25, 0.8571], [0.2501, 0.0], [999.0, 0.0]])"
+          },
+          {
+            "passed": false,
+            "reason": "持续 0.00s / 需 1.0s（子条件: 未满足）",
+            "actual": "0.000s",
+            "expected": "≥1.0s",
+            "sub_condition": {
+              "passed": false,
+              "reason": "未满足",
+              "actual": null,
+              "expected": null
+            },
+            "index": 1,
+            "repr": "(point_in_region('Group_Interactive_ElectriciansKnife02_task_electriciansknife02_site', 'Group_Interactive_ToolBox_base_site', radius=0.3)).for_duration(1.0s)"
+          }
+        ]
+      },
+      "frame_samples": 1342,
+      "auto_scored": true
+    },
+    {
+      "step_id": "pick_screwdriver",
+      "name": "拾取螺丝刀归位",
+      "score": 0.0,
+      "weight": 7.0,
+      "success": false,
+      "duration_s": 27.528,
+      "diagnosis": {
+        "passed": false,
+        "reason": "条件[0]未满足: 得分比率 0.0000（原始值 0.4788627219669078）",
+        "actual": 0.4788627219669078,
+        "expected": "按 score_curve 映射",
+        "sub_conditions": [
+          {
+            "passed": false,
+            "reason": "得分比率 0.0000（原始值 0.4788627219669078）",
+            "actual": 0.4788627219669078,
+            "expected": "按 score_curve 映射",
+            "index": 0,
+            "repr": "score_curve(site_distance('Group_Interactive_Screwdriver_task_screwdriver_site', 'Group_Interactive_ToolBox_base_site'), points=[[0.0, 1.0], [0.25, 0.8571], [0.2501, 0.0], [999.0, 0.0]])"
+          },
+          {
+            "passed": false,
+            "reason": "持续 0.00s / 需 1.0s（子条件: 未满足）",
+            "actual": "0.000s",
+            "expected": "≥1.0s",
+            "sub_condition": {
+              "passed": false,
+              "reason": "未满足",
+              "actual": null,
+              "expected": null
+            },
+            "index": 1,
+            "repr": "(point_in_region('Group_Interactive_Screwdriver_task_screwdriver_site', 'Group_Interactive_ToolBox_base_site', radius=0.3)).for_duration(1.0s)"
+          }
+        ]
+      },
+      "frame_samples": 1342,
+      "auto_scored": true
+    },
+    {
+      "step_id": "pick_wrench",
+      "name": "拾取扳手归位",
+      "score": 0.0,
+      "weight": 7.0,
+      "success": false,
+      "duration_s": 27.528,
+      "diagnosis": {
+        "passed": false,
+        "reason": "条件[0]未满足: 得分比率 0.0000（原始值 0.35503176067013364）",
+        "actual": 0.35503176067013364,
+        "expected": "按 score_curve 映射",
+        "sub_conditions": [
+          {
+            "passed": false,
+            "reason": "得分比率 0.0000（原始值 0.35503176067013364）",
+            "actual": 0.35503176067013364,
+            "expected": "按 score_curve 映射",
+            "index": 0,
+            "repr": "score_curve(site_distance('Group_Interactive_Spanner_task_spanner_site', 'Group_Interactive_ToolBox_base_site'), points=[[0.0, 1.0], [0.25, 0.8571], [0.2501, 0.0], [999.0, 0.0]])"
+          },
+          {
+            "passed": false,
+            "reason": "持续 0.00s / 需 1.0s（子条件: 未满足）",
+            "actual": "0.000s",
+            "expected": "≥1.0s",
+            "sub_condition": {
+              "passed": false,
+              "reason": "未满足",
+              "actual": null,
+              "expected": null
+            },
+            "index": 1,
+            "repr": "(point_in_region('Group_Interactive_Spanner_task_spanner_site', 'Group_Interactive_ToolBox_base_site', radius=0.3)).for_duration(1.0s)"
+          }
+        ]
+      },
+      "frame_samples": 1342,
+      "auto_scored": true
+    },
+    {
+      "step_id": "pick_flashlight",
+      "name": "拾取小手电筒归位",
+      "score": 0.6776,
+      "weight": 7.0,
+      "success": true,
+      "duration_s": 27.528,
+      "diagnosis": {
+        "passed": true,
+        "reason": "全部条件通过",
+        "actual": null,
+        "expected": null,
+        "sub_conditions": [
+          {
+            "passed": true,
+            "reason": "得分比率 0.9589（原始值 0.0719374164128294）",
+            "actual": 0.0719374164128294,
+            "expected": "按 score_curve 映射",
+            "index": 0,
+            "repr": "score_curve(site_distance('Group_Interactive_Flashlight_task_flashlight_site', 'Group_Interactive_ToolBox_base_site'), points=[[0.0, 1.0], [0.25, 0.8571], [0.2501, 0.0], [999.0, 0.0]])"
+          },
+          {
+            "passed": true,
+            "reason": "持续 1.00s / 需 1.0s（子条件: 通过）",
+            "actual": "1.000s",
+            "expected": "≥1.0s",
+            "sub_condition": {
+              "passed": true,
+              "reason": "通过",
+              "actual": null,
+              "expected": null
+            },
+            "index": 1,
+            "repr": "(point_in_region('Group_Interactive_Flashlight_task_flashlight_site', 'Group_Interactive_ToolBox_base_site', radius=0.3)).for_duration(1.0s)"
+          }
+        ],
+        "task3_penalty": "未检测到机器人有效动作（base/max_v=0.000m/s, path=0.000m; left_ee/max_v=0.000m/s, path=0.000m; right_ee/max_v=0.000m/s, path=0.000m），得分打 1 折"
+      },
+      "frame_samples": 1342,
+      "auto_scored": true,
+      "extra": {
+        "score": 0.6776,
+        "task3_discount": 0.1,
+        "task3_reason": "未检测到机器人有效动作（base/max_v=0.000m/s, path=0.000m; left_ee/max_v=0.000m/s, path=0.000m; right_ee/max_v=0.000m/s, path=0.000m），得分打 1 折",
+        "task3_duration_s": 165.165,
+        "task3_movement_check": {
+          "base_max_velocity": 0.0,
+          "base_path_length": 0.0,
+          "left_ee_max_velocity": 0.0,
+          "left_ee_path_length": 0.0,
+          "right_ee_max_velocity": 0.0,
+          "right_ee_path_length": 0.0,
+          "speedrun": false,
+          "no_movement_cheat": true
+        }
+      }
+    },
+    {
+      "step_id": "pick_electrician_knife",
+      "name": "拾取电工刀归位",
+      "score": 0.0,
+      "weight": 7.0,
+      "success": false,
+      "duration_s": 27.528,
+      "diagnosis": {
+        "passed": false,
+        "reason": "条件[0]未满足: 得分比率 0.0000（原始值 0.5872353534283274）",
+        "actual": 0.5872353534283274,
+        "expected": "按 score_curve 映射",
+        "sub_conditions": [
+          {
+            "passed": false,
+            "reason": "得分比率 0.0000（原始值 0.5872353534283274）",
+            "actual": 0.5872353534283274,
+            "expected": "按 score_curve 映射",
+            "index": 0,
+            "repr": "score_curve(site_distance('Group_Interactive_ElectriciansKnife01_task_electriciansknife01_site', 'Group_Interactive_ToolBox_base_site'), points=[[0.0, 1.0], [0.25, 0.8571], [0.2501, 0.0], [999.0, 0.0]])"
+          },
+          {
+            "passed": false,
+            "reason": "持续 0.00s / 需 1.0s（子条件: 未满足）",
+            "actual": "0.000s",
+            "expected": "≥1.0s",
+            "sub_condition": {
+              "passed": false,
+              "reason": "未满足",
+              "actual": null,
+              "expected": null
+            },
+            "index": 1,
+            "repr": "(point_in_region('Group_Interactive_ElectriciansKnife01_task_electriciansknife01_site', 'Group_Interactive_ToolBox_base_site', radius=0.3)).for_duration(1.0s)"
+          }
+        ]
+      },
+      "frame_samples": 1342,
+      "auto_scored": true
+    }
+  ],
+  "video_path": "/home/dgl/lxc/SouthGrid/src/examples/inference/g1_omnipicker/recordings/att_218a0fe4e584_task3_tool_storage.mp4",
+  "total_frames": 1342,
+  "prompt": "整理工具(Task3 工具收纳)"
+}

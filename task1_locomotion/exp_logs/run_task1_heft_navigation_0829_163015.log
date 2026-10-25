@@ -1,0 +1,26 @@
+[heft-task1] 根据 --robot-id=g1_pick 覆盖机器人配置: {'base_body': 'g1_pick_pelvis', 'free_joint': 'g1_pick_floating_base_joint', 'ee_site': 'g1_pick_left_palm', 'ee_site_right': 'g1_pick_right_palm', 'finger_a': 'g1_pick_left_hand_thumb_0_joint', 'finger_b': 'g1_pick_left_hand_index_0_joint'}
+[2026-08-29 16:30:16.662] [33mWARNING    [0m | __init__             | /home/dgl/miniconda3/envs/orcalab/lib/python3.12/site-packages/orca_gym/environment/orca_gym_local_env.py:87   | Using legacy anchor body name 'ActorManipulator_Anchor'. Please upgrade the level to use the new UUID-based name 'ORCA_MANIPULATOR_a3f5e2d1-7b8c-4f2a-9e6d-1c2b3a4f5d6e_Anchor' to avoid name conflicts with user-imported XML.
+[orca_rl.scene] G1: complete matches ['g1_pick']
+[2026-08-29 16:30:16.854] [33mWARNING    [0m | __init__             | /home/dgl/miniconda3/envs/orcalab/lib/python3.12/site-packages/orca_gym/environment/orca_gym_local_env.py:87   | Using legacy anchor body name 'ActorManipulator_Anchor'. Please upgrade the level to use the new UUID-based name 'ORCA_MANIPULATOR_a3f5e2d1-7b8c-4f2a-9e6d-1c2b3a4f5d6e_Anchor' to avoid name conflicts with user-imported XML.
+[orca_rl.play] Applied unitree-orca MuJoCo global settings: integrator=Euler gravity=(0, 0, -9.81) density=0 viscosity=0 wind=(0, 0, 0) noslip_iterations=0 sdf_iterations=10
+[orca_rl.control] G1: action_dim=29, model_nu=85, preserved_uncontrolled_actuators=56
+[heft-task1] robot=G1+Dex3-1 envs=1 remote=localhost:50051
+
+[nav] 目标: Static_Location_A_site @ (43.55, -27.57)
+  [  0] pos=(18.54,-27.05) yaw= -2.9° dist=25.01m err= 1.7°
+  [ 25] pos=(18.75,-27.07) yaw= -1.9° dist=24.81m err= 0.8°
+  [ 50] pos=(18.96,-27.07) yaw= -0.3° dist=24.60m err=-0.9°
+  [ 75] pos=(19.16,-27.07) yaw= -1.1° dist=24.40m err=-0.1°
+  [100] pos=(19.36,-27.08) yaw= -0.7° dist=24.19m err=-0.5°
+  [125] pos=(19.57,-27.08) yaw= -0.6° dist=23.99m err=-0.6°
+  [150] pos=(19.77,-27.09) yaw= -1.0° dist=23.79m err=-0.1°
+  [175] pos=(19.97,-27.09) yaw= -1.9° dist=23.58m err= 0.7°
+  [200] pos=(20.18,-27.09) yaw= -2.1° dist=23.38m err= 0.9°
+  [225] pos=(20.38,-27.10) yaw= -1.5° dist=23.18m err= 0.3°
+  [250] pos=(20.58,-27.10) yaw= -0.8° dist=22.97m err=-0.4°
+  [275] pos=(20.79,-27.11) yaw= -0.7° dist=22.77m err=-0.5°
+  [300] pos=(20.99,-27.11) yaw= -1.2° dist=22.57m err= 0.1°
+  [325] pos=(21.19,-27.12) yaw= -1.6° dist=22.37m err= 0.4°
+  [350] pos=(21.39,-27.12) yaw= -1.4° dist=22.17m err= 0.2°
+  [375] pos=(21.59,-27.13) yaw= -0.4° dist=21.96m err=-0.7°
+  [400] pos=(21.80,-27.13) yaw= -0.5° dist=21.76m err=-0.7°

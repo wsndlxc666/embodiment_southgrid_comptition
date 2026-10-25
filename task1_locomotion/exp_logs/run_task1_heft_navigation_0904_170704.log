@@ -1,0 +1,21 @@
+[heft-task1] 根据 --robot-id=g1_pick 覆盖机器人配置: {'base_body': 'g1_pick_pelvis', 'free_joint': 'g1_pick_floating_base_joint', 'ee_site': 'g1_pick_left_palm', 'ee_site_right': 'g1_pick_right_palm', 'finger_a': 'g1_pick_left_hand_thumb_0_joint', 'finger_b': 'g1_pick_left_hand_index_0_joint'}
+Traceback (most recent call last):
+  File "/home/dgl/lxc/task1_locomotion/orca_rl/utils.py", line 34, in check_orcagym_addresses
+    with socket.create_connection((host, port), timeout=timeout_s):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/dgl/miniconda3/envs/orcalab/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/home/dgl/miniconda3/envs/orcalab/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dgl/lxc/task1_locomotion/run_task1_heft_navigation.py", line 376, in <module>
+    main()
+  File "/home/dgl/lxc/task1_locomotion/run_task1_heft_navigation.py", line 310, in main
+    check_orcagym_addresses(task_cfg)
+  File "/home/dgl/lxc/task1_locomotion/orca_rl/utils.py", line 37, in check_orcagym_addresses
+    raise RuntimeError(
+RuntimeError: Cannot connect to OrcaGym at localhost:50051. Start OrcaLab/OrcaStudio or pass --remote host:port. Original error: [Errno 111] Connection refused

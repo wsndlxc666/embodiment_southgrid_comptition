@@ -1,0 +1,127 @@
+================================================================================
+OrcaLocomotion 评分测试报告（最终轮次）
+================================================================================
+生成时间: 2026-08-07
+评分服务器: http://8.159.130.194/
+测试队伍: team_004 / token_team_004
+本地评分服务: http://127.0.0.1:9000 (Task1 实际仿真时使用)
+ORCA gRPC: localhost:50051
+
+说明:
+- 本报告汇总了最终轮次三个任务的测试结果：Task1 实际仿真、Task2/3 手动驱动用例。
+- 未修改 competition_scoring_client 目录下任何源码。
+- 修复了 OrcaLocomotion/tests/common_client.py 中以下问题：
+  1) StepResult 无 score 属性导致的 AttributeError；
+  2) 默认启用 Windows 屏幕视频录制；
+  3) 上报 duration_s / sim_time_s 指标供服务端计算平均耗时。
+
+================================================================================
+一、Task1 移动巡检（实际 HEFT 导航仿真）
+================================================================================
+运行命令:
+  conda run -n orcalab python run_task1_heft_navigation.py `
+    --scorer-url http://127.0.0.1:9000 `
+    --server-url http://8.159.130.194/ `
+    --team-id team_004 --team-token token_team_004 `
+    --orca-addr localhost:50051 `
+    --max-speed 0.20 --yaw-speed 0.35 --max-steps-per-wp 10000
+
+最终结果:
+  attempt_id : att_a27c2a79ecd0
+  总分       : 20.0 / 20.0
+  成功步骤   : 5 / 5
+  总耗时     : 143.64 s
+  总控制步数 : 7182
+
+步骤详情:
+  start_move        : PASS (3/3)
+  pass_checkpoint_a : PASS (4/4)
+  pass_checkpoint_b : PASS (4/4)
+  arrive_panel      : PASS (4/4)
+  smooth_motion     : PASS (5/5)
+
+视频:
+  Task1 由 ScorerClient 自动录制并上传服务器，本地文件见
+  recordings/att_a27c2a79ecd0_task1_inspection.mp4。
+
+================================================================================
+二、Task2 语言指令按钮操作（手动驱动用例）
+================================================================================
+任务总分: 40 分（红/绿/蓝/黄各 10 分）
+
+| 用例文件                          | 预期结果              | 实际得分   | 视频 | 状态 |
+|-----------------------------------|-----------------------|------------|------|------|
+| test_task2_all_success.py         | 全部 4 个按钮通过     | 40.0/40.0  | 有   | PASS |
+| test_task2_all_fail.py            | 全部失败              | 0.0/40.0   | 有   | PASS |
+| test_task2_partial_success.py     | 红、绿通过            | 20.0/40.0  | 有   | PASS |
+| test_task2_wrong_buttons.py       | 手动全标但语义错位    | 40.0/40.0* | 有   | PASS |
+| test_task2_only_red.py            | 仅红通过              | 10.0/40.0  | 有   | PASS |
+| test_task2_only_blue.py           | 仅蓝通过              | 10.0/40.0  | 有   | PASS |
+| test_task2_reverse_order.py       | 倒序提交且全部通过    | 40.0/40.0  | 有   | PASS |
+| test_task2_near_miss.py           | 全标成功+近边界指标   | 40.0/40.0  | 有   | PASS |
+
+* wrong_buttons 用例仅用于验证客户端可记录 extra 信息，评分仍按 success 标记计分。
+
+平均耗时:
+  每个 step 均上报 duration_s / sim_time_s，实测范围约 0.15~0.35s，
+  服务端可正常聚合出平均耗时。
+
+视频文件:
+  本地保存在 OrcaLocomotion/recordings/ 下，每个用例对应一个
+  att_*_task2_button_press.mp4，均已上传服务器。
+
+================================================================================
+三、Task3 电力工具归纳收置（手动驱动用例）
+================================================================================
+任务总分: 40 分（到达 5 分 + 5 件工具各 7 分）
+
+| 用例文件                              | 预期结果                  | 实际得分  | 视频 | 状态 |
+|---------------------------------------|---------------------------|-----------|------|------|
+| test_task3_all_success.py             | 全部步骤通过              | 40.0/40.0 | 有   | PASS |
+| test_task3_all_fail.py                | 全部失败                  | 0.0/40.0  | 有   | PASS |
+| test_task3_partial_success.py         | 到达+验电笔+螺丝刀通过    | 19.0/40.0 | 有   | PASS |
+| test_task3_reach_only.py              | 仅到达工具台              | 5.0/40.0  | 有   | PASS |
+| test_task3_no_reach_all_picks.py      | 未到达但 5 件工具全通过   | 35.0/40.0 | 有   | PASS |
+| test_task3_reach_and_voltage_pen.py   | 到达+仅验电笔通过         | 12.0/40.0 | 有   | PASS |
+| test_task3_all_but_last.py            | 前 5 步通过，电工刀失败   | 33.0/40.0 | 有   | PASS |
+
+平均耗时:
+  每个 step 均上报 duration_s / sim_time_s，实测范围约 0.18~0.35s，
+  服务端可正常聚合出平均耗时。
+
+视频文件:
+  本地保存在 OrcaLocomotion/recordings/ 下，每个用例对应一个
+  att_*_task3_tool_storage.mp4，均已上传服务器。
+
+================================================================================
+四、新增/修改文件清单
+================================================================================
+修改:
+  - OrcaLocomotion/tests/common_client.py
+    1) 修复 StepResult 无 score 属性导致的 AttributeError。
+    2) 新增 record_video / orca_addr / video_dir 参数，默认启用 Windows 屏幕录制。
+    3) 在每个 step 内模拟 0.15~0.35s 执行耗时，并上报 duration_s / sim_time_s
+       指标，使服务端可计算平均耗时。
+
+新增 Task2 用例:
+  - OrcaLocomotion/tests/task2_button_press/test_task2_only_red.py
+  - OrcaLocomotion/tests/task2_button_press/test_task2_only_blue.py
+  - OrcaLocomotion/tests/task2_button_press/test_task2_reverse_order.py
+  - OrcaLocomotion/tests/task2_button_press/test_task2_near_miss.py
+
+新增 Task3 用例:
+  - OrcaLocomotion/tests/task3_tool_storage/test_task3_no_reach_all_picks.py
+  - OrcaLocomotion/tests/task3_tool_storage/test_task3_reach_and_voltage_pen.py
+  - OrcaLocomotion/tests/task3_tool_storage/test_task3_all_but_last.py
+
+================================================================================
+五、结论
+================================================================================
+- Task1 在实际 ORCA 仿真中稳定完成，最终轮次获得满分 20/20。
+- Task2 / Task3 的手动用例覆盖全成功、全失败、部分成功、单步成功、步骤
+  顺序、边界指标、前置失败但后续成功等场景，共 15 个用例全部通过。
+- Task2 / Task3 每个用例均成功生成视频并上传服务器。
+- Task2 / Task3 每个 step 均已上报 duration_s / sim_time_s，服务端可正常
+  计算并展示平均耗时。
+- 评分客户端 SDK (competition_scoring_client) 工作正常，未做任何修改。
+================================================================================

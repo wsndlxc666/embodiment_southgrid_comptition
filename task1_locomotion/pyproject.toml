@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orca-heft-dex3"
+version = "1.0.0"
+description = "HEFT G1 + Dex3-1 playback runtime for OrcaLab."
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "OpenVerse Orca" }]
+dependencies = [
+  "numpy==2.2.6",
+  "orca-lab>=26.6.3",
+  "mujoco==3.7.0",
+  "onnxruntime>=1.17.0",
+  "pynput>=1.7.6",
+]
+
+[tool.setuptools.packages.find]
+include = ["orca_rl*"]

@@ -1,0 +1,27 @@
+# ---- 大体积运行时产物（不纳入仓库）----
+/openpi/checkpoints/
+/openpi/data/
+/openpi/wandb/
+/openpi/.venv/
+/openpi/.runlogs/
+/openpi/pi05_g1_omnipicker_clear5_lora_s1500
+
+# ---- 会话 / 运行记录 ----
+**/.runlogs/
+**/.orca_scorer_client/
+**/recordings/*.ffmpeg.log
+
+# ---- Python ----
+**/__pycache__/
+**/*.py[cod]
+**/*.egg-info/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# ---- 日志轮转 ----
+**/*.log.1
+**/*.log.[0-9]
+
+# ---- 系统 ----
+.DS_Store

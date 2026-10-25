@@ -1,0 +1,88 @@
+# Task1 移动巡检导航配置
+#
+# 机器人：G1 + Dex3-1（场景中默认实体为 g1_pick）
+# 任务：task1_inspection（移动巡检）
+#
+# 本文件随 OrcaLocomotion 仓库分发，不再依赖外部 competition_scoring_client 源码目录。
+# 运行 run_task1_heft_navigation.py / run_task1_failure_tests.py 时会自动读取本文件。
+# 如需切换机器人形态，请通过 --robot-id 参数覆盖本文件中的机器人 body/joint 名称。
+
+# 使用的机器人配置（对应评分客户端 configs/robots.yaml 中的 robot_profiles）
+robot_profile: "g1_pick"
+
+# 机器人配置（默认匹配场景中 g1_pick 实体的命名）
+robot:
+  # 基础 body（用于位置、速度判定）
+  base_body: "g1_pick_pelvis"
+
+  # 自由关节（用于移动控制）
+  free_joint: "g1_pick_floating_base_joint"
+
+  # 末端执行器 site（左手 palm）
+  ee_site: "g1_pick_left_palm"
+  ee_site_right: "g1_pick_right_palm"
+
+  # 夹爪关节
+  finger_a: "g1_pick_left_hand_thumb_0_joint"
+  finger_b: "g1_pick_left_hand_index_0_joint"
+
+  # 双足移动相关关节
+  leg_joints:
+    - "g1_pick_left_hip_pitch_joint"
+    - "g1_pick_left_hip_roll_joint"
+    - "g1_pick_left_hip_yaw_joint"
+    - "g1_pick_left_knee_joint"
+    - "g1_pick_left_ankle_pitch_joint"
+    - "g1_pick_left_ankle_roll_joint"
+    - "g1_pick_right_hip_pitch_joint"
+    - "g1_pick_right_hip_roll_joint"
+    - "g1_pick_right_hip_yaw_joint"
+    - "g1_pick_right_knee_joint"
+    - "g1_pick_right_ankle_pitch_joint"
+    - "g1_pick_right_ankle_roll_joint"
+
+  # 无轮式底盘驱动配置
+  front_drive: null
+
+# 路点配置（ORCA site 名字）
+waypoints:
+  # 路点顺序：起点 → A → B → C（panel）
+  - site_name: "Static_Location_A_site"
+    radius: 0.3
+    description: "检查点 A"
+  - site_name: "Static_Location_B_site"
+    radius: 0.3
+    description: "检查点 B"
+  - site_name: "Static_Location_C_site"
+    radius: 0.3
+    description: "目标电力设备柜 C"
+
+# 导航控制器参数
+nav:
+  # 油门（throttle）：[-1, 1]，正为前进
+  throttle: 0.6
+  # 转向死区：朝向误差绝对值小于此值时认为对准，直行
+  heading_deadzone_rad: 0.05    # ≈ 2.86°
+  # 到达路点的判定半径（与评分 radius 一致）
+  arrival_radius_m: 0.5
+  # 转向增益（P 控制，steering = clip(-kp * heading_err, ±1)）
+  steer_kp: 1.5
+  # 最大转向输入（归一化）
+  max_steer_input: 0.8
+  # 倒车允许：朝向误差 > π/2 时是否允许倒车
+  allow_reverse: true
+  # 倒车油门
+  reverse_throttle: -0.3
+  # 朝向估计用速度阈值：速度模长低于此值时认为静止，不更新朝向估计
+  velocity_heading_threshold: 0.05
+
+# 推理循环参数
+control:
+  # 每集最大控制步数
+  max_steps: 1500
+  # 每集最大耗时（秒），超时自动结束
+  max_duration_s: 120.0
+  # 是否按 real_time_step 节奏运行
+  sleep: false
+  # 渲染间隔（步）
+  render_interval: 1
